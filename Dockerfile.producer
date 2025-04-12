@@ -1,0 +1,9 @@
+FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY producer.py .
+COPY ip_addresses.csv .
+RUN pip install polars requests
+
+CMD ["python", "producer.py"]
